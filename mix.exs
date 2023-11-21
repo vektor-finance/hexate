@@ -2,14 +2,16 @@ defmodule Hexate.Mixfile do
   use Mix.Project
 
   def project do
-    [ app: :hexate,
-      version: "0.6.0",
+    [
+      app: :hexate,
+      version: "0.6.1",
       elixir: "~> 1.3",
-      build_embedded: Mix.env == :prod,
-      start_permanent: Mix.env == :prod,
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
       description: description(),
       package: package(),
-      deps: deps() ]
+      deps: deps()
+    ]
   end
 
   defp description do
@@ -23,8 +25,10 @@ defmodule Hexate.Mixfile do
       files: ["lib", "mix.exs", "README*", "LICENSE*", "CHANGELOG*"],
       contributors: ["Rob Samson", "David Parry"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/rjsamson/hexate",
-              "Docs" => "http://hexdocs.pm/hexate/0.5.1/"}
+      links: %{
+        "GitHub" => "https://github.com/rjsamson/hexate",
+        "Docs" => "http://hexdocs.pm/hexate/0.5.1/"
+      }
     ]
   end
 
